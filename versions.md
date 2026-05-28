@@ -68,9 +68,11 @@ The purpose is to prove that the model feels practical for real daily use.
 
 ### Storage decision
 
-The v0.2 manual data model trial starts with Google Sheets.
+The v0.2 manual data model trial uses repo-tracked CSV files stored under `data/manual-trial/`.
 
-Google Sheets is being used because it is easy to inspect, edit, and adjust manually.
+Repo-tracked CSV files are being used because they are simple, structured, version-controlled, and directly inspectable by ChatGPT through the GitHub connector.
+
+Google Sheets is not used for the trial because ChatGPT cannot directly verify Google Sheets from this project.
 
 SQLite remains the preferred storage option for the serious MVP.
 
@@ -79,7 +81,7 @@ SQLite remains the preferred storage option for the serious MVP.
 - Use `manual-trial.md` to record the v0.2 trial notes.
 - Define example routines manually.
 - Define checklist items manually.
-- Store trial data in Google Sheets.
+- Store trial data in repo-tracked CSV files under `data/manual-trial/`.
 - Create at least one daily routine.
 - Create at least one weekly routine.
 - Create at least one longer-term recurring reminder.
@@ -91,7 +93,7 @@ SQLite remains the preferred storage option for the serious MVP.
 ### Acceptance checklist
 
 - [ ] `manual-trial.md` records the trial scope and decisions.
-- [ ] Google Sheets is set up for the manual trial.
+- [ ] Repo-tracked CSV files are set up under `data/manual-trial/`.
 - [ ] At least one daily routine is defined.
 - [ ] At least one weekly routine is defined.
 - [ ] At least one longer-term recurring reminder is defined.
