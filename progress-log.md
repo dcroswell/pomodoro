@@ -2,6 +2,87 @@
 
 This document records what has been done and what has been decided.
 
+## 2026-05-29 — v0.3 deterministic routine engine complete
+
+### Done
+
+- Created `command-workflow.md` to define the first deterministic text-command workflow for v0.3.
+- Created the initial Python project structure:
+  - `src/routine_engine.py`
+  - `tests/test_routine_engine.py`
+  - `requirements-dev.txt`
+  - `.gitignore`
+- Added `pytest` as the development test dependency.
+- Added automated tests for the v0.3 routine engine.
+- Implemented generic routine listing.
+- Implemented routine start behaviour.
+- Implemented clear error handling for unknown routine IDs.
+- Implemented current routine retrieval.
+- Implemented checklist item status handling:
+  - mark item done
+  - skip item
+- Implemented routine finishing with a basic summary:
+  - done count
+  - skipped count
+  - pending count
+- Implemented simple routine completion logging.
+- Ran automated tests successfully.
+- Ran a manual end-to-end test successfully using a sample Morning Routine.
+- Verified committed code from GitHub after each major checkpoint.
+
+### Key decisions
+
+- v0.3 is a deterministic routine engine, not a Telegram bot, calendar integration, voice system, or AI parser.
+- The routine engine should be generic and user-driven.
+- Example routines such as Wake-up Routine or Morning Routine are sample data only, not built-in application logic.
+- Routine data should be supplied to the engine, not hard-coded inside the engine.
+- The engine should work with any user-created routine name and checklist items.
+- The first v0.3 log behaviour can remain simple: append the finished routine to an in-memory routine log.
+- More durable storage can come later when the project moves toward SQLite.
+- `command-workflow.md` should be added to the core documentation list during the v0.3 documentation checkpoint.
+
+### Current project documents
+
+- `README.md`
+- `requirements.md`
+- `versions.md`
+- `data-model.md`
+- `manual-trial.md`
+- `architecture.md`
+- `command-workflow.md`
+- `progress-log.md`
+- `next.md`
+- `gpt_project_settings.txt`
+
+### Current status
+
+v0.3 code behaviour is functionally complete.
+
+The deterministic routine engine supports:
+
+- listing supplied routines
+- starting a routine
+- viewing the current routine
+- marking checklist items done
+- skipping checklist items
+- finishing a routine
+- producing a basic completion summary
+- logging a finished routine
+
+Automated tests and a manual end-to-end test have passed.
+
+### Handoff
+
+Continue the v0.3 documentation checkpoint.
+
+Next documentation targets:
+
+1. Update `versions.md` so v0.3 acceptance is marked complete.
+2. Update `next.md` so the next target moves beyond v0.3.
+3. Update `README.md` so it references `command-workflow.md` and no longer says v0.2 is the current target.
+
+---
+
 ## 2026-05-28 — Documentation cleanup checkpoint
 
 ### Done
