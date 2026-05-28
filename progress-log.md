@@ -1,6 +1,6 @@
 # Progress Log
 
-This document records what has been done, what has been decided, and what should happen next.
+This document records what has been done and what has been decided.
 
 ## 2026-05-28
 
@@ -9,14 +9,15 @@ This document records what has been done, what has been decided, and what should
 - Created the `dcroswell/pomodoro` repo as the source of truth for this project.
 - Added `README.md`.
 - Added naming conventions to `README.md`.
+- Added working protocol to `README.md`.
 - Added `requirements.md`.
 - Added `versions.md`.
 - Added `data-model.md`.
 - Added `architecture.md`.
 - Added `progress-log.md`.
 - Added `next.md`.
-- Added working protocol to `README.md`.
 - Completed the v0.1 planning and documentation checklist in `versions.md`.
+- Removed duplicated project-control content from `README.md` and `requirements.md`.
 
 ### Key decisions
 
@@ -35,6 +36,8 @@ This document records what has been done, what has been decided, and what should
 - Samsung or Google keyboard dictation can provide a simple early voice workaround.
 - The repo root should contain the core control documents.
 - `docs/` should be reserved for supporting documents later.
+- `next.md` is the only live task pointer.
+- `progress-log.md` is historical, not the active task list.
 
 ### Current project documents
 
@@ -53,4 +56,3 @@ Ready to begin v0.2: manual data model trial.
 ### Handoff
 
 See `next.md` for the current target and next actions.
-
