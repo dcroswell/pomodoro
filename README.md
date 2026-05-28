@@ -56,3 +56,13 @@ Serious MVP:
 - `architecture.md` — how phone, backend, storage, and calendar fit together.
 - `progress-log.md` — running record of what has been done and decided.
 - `next.md` — the next few actions only, to avoid overwhelm.
+
+## Naming conventions
+
+This repo uses simple, consistent file naming:
+
+- `README.md` stays uppercase because it is the standard GitHub entry file.
+- Markdown documentation files use lowercase kebab-case, for example `data-model.md` and `progress-log.md`.
+- Folders use lowercase names, for example `docs/`, `src/`, `tests/`, and `data/`.
+- Python files will use lowercase snake_case, for example `routine_engine.py`.
+- Avoid mixed styles such as camelCase, PascalCase, random capitals, or spaces in filenames.
