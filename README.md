@@ -21,7 +21,9 @@ A Pomodoro in this project does not have to mean a strict 25-minute timer. It me
 
 ## Current status
 
-Ready to continue v0.2: manual data model trial.
+v0.3 deterministic routine engine is functionally complete.
+
+The current target is to finish the v0.3 documentation checkpoint, then begin v0.4: routine logging and daily review.
 
 See `next.md` for the current target and next actions.
 
@@ -32,6 +34,14 @@ Early trial:
 - Use structured data to define routines and checklist items.
 - Use repo-tracked CSV files under `data/manual-trial/` for the manual storage trial.
 - Keep trial data directly inspectable through GitHub.
+
+Current implemented engine:
+
+- Use deterministic Python routine-engine functions in `src/routine_engine.py`.
+- Keep routine data generic and user-driven.
+- Treat example routines as sample data only, not built-in application logic.
+- Use automated tests in `tests/test_routine_engine.py`.
+- Keep AI, voice, Telegram, and calendar integration out of the engine for now.
 
 Serious MVP:
 
@@ -49,21 +59,23 @@ Serious MVP:
 - Data should be structured and easy to migrate.
 - The repo is the single source of truth.
 - Prefer tools and storage that ChatGPT can directly inspect or verify in this project.
+- Keep the routine engine generic and user-driven.
 
 ## Core project documents
 
 - `requirements.md` — what the system must and must not do.
 - `versions.md` — staged roadmap from v0.1 to v1.0.
 - `data-model.md` — how routines, checklists, logs, and reminders are stored.
-- `manual-trial.md` — active v0.2 manual data model trial notes.
+- `manual-trial.md` — v0.2 manual data model trial notes.
 - `architecture.md` — how phone, backend, storage, and calendar fit together.
+- `command-workflow.md` — deterministic command workflow for v0.3.
 - `progress-log.md` — historical record of completed work and decisions.
 - `next.md` — current target and next actions only.
 - `gpt_project_settings.txt` — ChatGPT Project instruction source text.
 
 ## Trial data files
 
-The v0.2 manual trial should use repo-tracked CSV files under `data/manual-trial/`:
+The v0.2 manual trial used repo-tracked CSV files under `data/manual-trial/`:
 
 - `data/manual-trial/routines.csv`
 - `data/manual-trial/checklist_items.csv`
@@ -72,7 +84,26 @@ The v0.2 manual trial should use repo-tracked CSV files under `data/manual-trial
 - `data/manual-trial/reminders.csv`
 - `data/manual-trial/daily_review.csv`
 
-These files are preferred over Google Sheets because they can be committed, versioned, reviewed, and directly verified through the GitHub connector.
+These files were preferred over Google Sheets because they can be committed, versioned, reviewed, and directly verified through the GitHub connector.
+
+## Code and tests
+
+The v0.3 deterministic routine engine is implemented in:
+
+- `src/routine_engine.py`
+
+The v0.3 tests are implemented in:
+
+- `tests/test_routine_engine.py`
+
+Development test dependencies are recorded in:
+
+- `requirements-dev.txt`
+
+To run the current tests in zsh:
+
+    source .venv/bin/activate
+    python -m pytest
 
 ## Naming conventions
 
@@ -82,7 +113,7 @@ This repo uses simple, consistent file naming:
 - Markdown documentation files use lowercase kebab-case, for example `data-model.md` and `progress-log.md`.
 - Folders use lowercase names, for example `docs/`, `src/`, `tests/`, and `data/`.
 - CSV trial data files use lowercase snake_case, for example `checklist_items.csv`.
-- Python files will use lowercase snake_case, for example `routine_engine.py`.
+- Python files use lowercase snake_case, for example `routine_engine.py`.
 - Avoid mixed styles such as camelCase, PascalCase, random capitals, or spaces in filenames.
 
 ## Working protocol
@@ -126,6 +157,7 @@ Each work session should follow this simple pattern:
   - `data-model.md` when changing storage, fields, examples, or trial data.
   - `architecture.md` when changing system design, components, or integrations.
   - `manual-trial.md` when changing v0.2 trial scope, trial files, or trial decisions.
+  - `command-workflow.md` when changing deterministic command behaviour.
 - Inspect relevant files in `data/`, `docs/`, or project root as needed.
 - Work on one file or one small project step at a time.
 
