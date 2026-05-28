@@ -10,15 +10,7 @@ Start v0.2 manual data model trial.
 
 v0.1 planning and documentation baseline is complete.
 
-The project now has the core control documents:
-
-- `README.md`
-- `requirements.md`
-- `versions.md`
-- `data-model.md`
-- `architecture.md`
-- `progress-log.md`
-- `next.md`
+Core documents are in place. See `README.md` for the documentation index.
 
 ## Next 3 actions
 
