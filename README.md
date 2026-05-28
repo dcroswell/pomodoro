@@ -86,6 +86,10 @@ Each work session should follow this simple pattern:
 
 ### During session
 
+### During session
+
+- Work in small, clear steps, but group related edits together where practical.
+- If multiple changes belong in the same file, make them in one edit and commit once.
 - Verify completed steps where possible.
 - Avoid expanding scope unless it is deliberately added to the roadmap.
 - Do not update `next.md` after every tiny action.
