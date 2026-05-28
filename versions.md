@@ -11,6 +11,7 @@ The purpose of versioning is to keep the project small, clear, and achievable. E
 - Use calendar reminders only after the routine data model is clear.
 - Keep each version small enough to finish.
 - Do not start the next version until the current version acceptance checklist is complete.
+- Avoid expanding the current version just because a future feature has been discussed.
 
 ---
 
@@ -30,6 +31,7 @@ Create the core project documents and define the project clearly before building
 - Progress log.
 - Next actions document.
 - Naming conventions.
+- Working protocol.
 
 ### Acceptance checklist
 
@@ -37,10 +39,11 @@ Create the core project documents and define the project clearly before building
 - [x] `requirements.md` exists.
 - [x] `versions.md` exists.
 - [x] `data-model.md` exists.
-- [x] `architecture.md` exists.
+- [x] `architecture.md` exists and contains real architecture notes.
 - [x] `progress-log.md` exists.
 - [x] `next.md` exists.
 - [x] Naming conventions are documented.
+- [x] Working protocol is documented.
 - [x] First example routine is defined.
 - [x] Initial storage decision is recorded.
 - [x] Next build step is clearly identified.
@@ -59,32 +62,56 @@ Create the core project documents and define the project clearly before building
 
 ### Goal
 
-Test how routines, checklist items, runs, and reminders should be stored.
+Test how routines, checklist items, routine runs, reminders, and review entries should be stored before building code.
+
+The purpose is to prove that the model feels practical for real daily use.
+
+### Storage decision
+
+The v0.2 manual data model trial starts with Google Sheets.
+
+Google Sheets is being used because it is easy to inspect, edit, and adjust manually.
+
+SQLite remains the preferred storage option for the serious MVP.
 
 ### Includes
 
+- Use `manual-trial.md` to record the v0.2 trial notes.
 - Define example routines manually.
 - Define checklist items manually.
-- Store routines in a simple structured format.
-- Confirm whether Google Sheets or SQLite should be used first.
+- Store trial data in Google Sheets.
+- Create at least one daily routine.
+- Create at least one weekly routine.
+- Create at least one longer-term recurring reminder.
+- Create at least one example routine run.
+- Create at least one example routine run item.
 - Confirm the fields needed for routine templates and routine runs.
+- Confirm whether the model feels simple enough to use.
 
 ### Acceptance checklist
 
+- [ ] `manual-trial.md` records the trial scope and decisions.
+- [ ] Google Sheets is set up for the manual trial.
 - [ ] At least one daily routine is defined.
 - [ ] At least one weekly routine is defined.
 - [ ] At least one longer-term recurring reminder is defined.
 - [ ] Checklist items are stored as separate records, not as one large text block.
+- [ ] At least one routine run is logged.
+- [ ] At least one routine run item is logged.
+- [ ] Completed and skipped checklist items can be tracked.
 - [ ] Storage format can be migrated later.
-- [ ] Decision made: Google Sheets trial or SQLite first.
+- [ ] The model feels simple enough to actually use.
 
 ### Not included
 
+- Code.
 - Automation.
 - Telegram bot.
 - Calendar integration.
 - Voice input.
 - AI parsing.
+- Full shopping list implementation.
+- Full scheduled occurrence implementation.
 
 ---
 
@@ -175,6 +202,7 @@ Add simple shopping list functionality.
 - Show shopping list.
 - Mark item bought.
 - Remove item from list.
+- Link a routine checklist item to a shopping list where useful.
 
 ### Example commands
 
@@ -189,6 +217,7 @@ Add simple shopping list functionality.
 - [ ] User can view active shopping items.
 - [ ] User can mark items bought.
 - [ ] Bought items are recorded or removed consistently.
+- [ ] A routine checklist item can link to a shopping list.
 
 ### Not included
 
@@ -210,6 +239,7 @@ Use Google Calendar to remind the user when routine blocks or future tasks are d
 - Create recurring reminders.
 - Link reminders to routines where appropriate.
 - Keep checklist state outside the calendar.
+- Store reminder ID or calendar event ID where useful.
 
 ### Acceptance checklist
 
@@ -218,6 +248,7 @@ Use Google Calendar to remind the user when routine blocks or future tasks are d
 - [ ] Google Calendar event is created successfully.
 - [ ] Calendar stores timing only, not checklist state.
 - [ ] Reminder ID or calendar event ID is stored.
+- [ ] Routine state remains owned by the app/database, not by Google Calendar.
 
 ### Not included
 
@@ -238,6 +269,7 @@ Allow simple natural language commands after deterministic commands are stable.
 - Interpret simple phrases.
 - Convert phrases into structured actions.
 - Confirm ambiguous actions before changing data.
+- Keep deterministic commands working.
 
 ### Example phrases
 
@@ -310,7 +342,7 @@ Create a stable version useful enough for daily personal use.
 ### Acceptance checklist
 
 - [ ] User can use the system for daily routines.
-- [ ] User can use the system for weekly/monthly/life-admin reminders.
+- [ ] User can use the system for weekly, monthly, and life-admin reminders.
 - [ ] Logs are reliable.
 - [ ] Data is easy to back up.
 - [ ] Setup instructions are clear.
