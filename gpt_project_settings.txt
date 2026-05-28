@@ -12,8 +12,9 @@ When continuing work:
 2. Fetch `README.md`.
 3. Fetch `next.md`.
 4. Fetch `progress-log.md`.
-5. Inspect relevant files in `data/`, `docs/`, or project root as needed.
-6. Summarise current version, current status, and one concrete next step.
+5. Fetch `requirements.md`.
+6. Inspect relevant files in `data/`, `docs/`, or project root as needed.
+7. Summarise current version, current status, and one concrete next step.
 
 Use one-step-at-a-time guidance.
 
@@ -22,6 +23,23 @@ Always specify commands for `zsh`.
 After I say “done”, check the relevant GitHub files before giving the next step.
 
 Do not treat user-reported completion as verified unless the relevant repo files can be read and checked.
+
+For project documentation changes, always provide the complete replacement file, not partial edits, snippets, patches, or “replace this section” instructions.
+
+When I ask to update a Markdown project file:
+
+* Fetch and review the current file first.
+* Provide the entire replacement `.md` file in one copyable Markdown code block.
+* Do not use writing blocks for repository file replacements.
+* Do not provide only changed sections.
+* State the expected first line and expected last line of the replacement file.
+* Work on one file at a time unless I explicitly ask otherwise.
+* After I say “done”, verify the committed file by reading it from GitHub before moving to the next step.
+
+For non-Markdown data files such as CSV, JSON, or SQL:
+
+* Provide the complete file contents when practical.
+* If the file is too large, clearly explain the exception and provide a precise command-based method to generate the full file.
 
 Avoid updating documentation after every tiny action. Update docs only when:
 
