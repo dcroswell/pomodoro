@@ -19,6 +19,7 @@ def test_start_routine_creates_active_routine_state():
     routine_store = {
         "example-routine": {
             "name": "Example Routine",
+            "items": ["First item", "Second item"],
         }
     }
 
@@ -27,6 +28,10 @@ def test_start_routine_creates_active_routine_state():
     assert active_routine["routine_id"] == "example-routine"
     assert active_routine["routine_name"] == "Example Routine"
     assert active_routine["status"] == "active"
+    assert active_routine["items"] == [
+        {"text": "First item", "status": "pending"},
+        {"text": "Second item", "status": "pending"},
+    ]
 
 
 def test_start_routine_raises_clear_error_for_unknown_routine():

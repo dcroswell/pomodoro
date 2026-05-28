@@ -12,4 +12,8 @@ def start_routine(routine_store, routine_id):
         "routine_id": routine_id,
         "routine_name": routine["name"],
         "status": "active",
+        "items": [
+            {"text": item_text, "status": "pending"}
+            for item_text in routine.get("items", [])
+        ],
     }
