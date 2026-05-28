@@ -73,27 +73,29 @@ Each work session should follow this simple pattern:
 
 ### Start of session
 
-- Read the core project documents:
-  - `README.md`
-  - `requirements.md`
-  - `versions.md`
-  - `data-model.md`
-  - `architecture.md`
-  - `progress-log.md`
-  - `next.md`
-- Confirm the current target from `next.md`.
+- Read `README.md` for the project overview and working protocol.
+- Read `next.md` to confirm the current target and next actions.
+- Read the latest entry in `progress-log.md` for recent decisions and handoff notes.
+- Read specialist documents only when relevant:
+  - `requirements.md` when changing scope or behaviour.
+  - `versions.md` when changing roadmap, milestones, or checklists.
+  - `data-model.md` when changing storage, fields, examples, or trial data.
+  - `architecture.md` when changing system design, components, or integrations.
 - Work on one small step at a time.
 
 ### During session
 
+- Work on the project first; documentation should support the work, not replace it.
 - Work in small, clear steps, but group related edits together where practical.
 - If multiple changes belong in the same file, make them in one edit and commit once.
+- Update documents only when a decision, milestone, target, requirement, data model, or architecture changes.
+- Prefer one end-of-session documentation checkpoint over frequent small documentation edits.
 - Verify completed steps where possible.
 - Avoid expanding scope unless it is deliberately added to the roadmap.
 - Do not update `next.md` after every tiny action.
 
 ### End of session
 
-- Update `progress-log.md` with what was completed and decided.
+- Update `progress-log.md` only when meaningful progress or decisions were made.
 - Update `next.md` only if the next target has changed or the session is ending.
-- Commit and push the documentation checkpoint.
+- Commit and push the documentation checkpoint if documents changed.
