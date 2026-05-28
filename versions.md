@@ -92,16 +92,16 @@ SQLite remains the preferred storage option for the serious MVP.
 
 ### Acceptance checklist
 
-- [ ] `manual-trial.md` records the trial scope and decisions.
-- [ ] Repo-tracked CSV files are set up under `data/manual-trial/`.
-- [ ] At least one daily routine is defined.
-- [ ] At least one weekly routine is defined.
-- [ ] At least one longer-term recurring reminder is defined.
-- [ ] Checklist items are stored as separate records, not as one large text block.
-- [ ] At least one routine run is logged.
-- [ ] At least one routine run item is logged.
+- [x] `manual-trial.md` records the trial scope and decisions.
+- [x] Repo-tracked CSV files are set up under `data/manual-trial/`.
+- [x] At least one daily routine is defined.
+- [x] At least one weekly routine is defined.
+- [x] At least one longer-term recurring reminder is defined.
+- [x] Checklist items are stored as separate records, not as one large text block.
+- [x] At least one routine run is logged.
+- [x] At least one routine run item is logged.
 - [ ] Completed and skipped checklist items can be tracked.
-- [ ] Storage format can be migrated later.
+- [x] Storage format can be migrated later.
 - [ ] The model feels simple enough to actually use.
 
 ### Not included
