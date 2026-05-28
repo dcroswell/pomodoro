@@ -1,14 +1,16 @@
 # Next Actions
 
-This document shows only the next few actions. It should stay short.
+This document shows only the current target and the next few actions. It should stay short.
 
 ## Current target
 
-Finish the v0.1 planning and documentation baseline.
+Start v0.2 manual data model trial.
 
 ## Current status
 
-The following core documents exist:
+v0.1 planning and documentation baseline is complete.
+
+The project now has the core control documents:
 
 - `README.md`
 - `requirements.md`
@@ -16,16 +18,13 @@ The following core documents exist:
 - `data-model.md`
 - `architecture.md`
 - `progress-log.md`
-
-The remaining core document is:
-
 - `next.md`
 
 ## Next 3 actions
 
-1. Create `next.md`.
-2. Update `progress-log.md` so it no longer says `progress-log.md` still needs to be created.
-3. Review the v0.1 checklist in `versions.md`.
+1. Decide whether the v0.2 manual data model trial starts in Google Sheets or SQLite.
+2. Create the first manual trial data set for the Wake-up Routine.
+3. Test whether the routine/checklist/run structure feels right before building code.
 
 ## Do not work on yet
 
@@ -37,9 +36,11 @@ The remaining core document is:
 - Native Android app
 - Home Assistant integration
 
-## Decision needed soon
+## Decision needed now
 
-Decide whether the v0.2 manual data model trial starts with:
+Choose the storage tool for v0.2 manual trial:
 
 - Google Sheets, for easy manual inspection; or
 - SQLite, to start closer to the serious MVP architecture.
+
+Recommendation: start with Google Sheets for the manual trial, then move to SQLite for the serious MVP.

@@ -13,6 +13,9 @@ This document records what has been done, what has been decided, and what should
 - Added `versions.md`.
 - Added `data-model.md`.
 - Added `architecture.md`.
+- Added `versions.md`.
+- Added `progress-log.md`.
+- Completed the v0.1 planning and documentation checklist in `versions.md`.
 
 ### Key decisions
 
@@ -39,16 +42,12 @@ This document records what has been done, what has been decided, and what should
 - `versions.md`
 - `data-model.md`
 - `architecture.md`
+- `progress-log.md`
+- `next.md`
 
 ### Current status
 
 The project is in the planning and documentation stage.
 
-The next goal is to finish the core control documents for v0.1.
+The next goal is to Start v0.2 manual data model trial.
 
-### Next
-
-- Create `progress-log.md`.
-- Create `next.md`.
-- Review the v0.1 checklist in `versions.md`.
-- Decide whether the manual data model trial starts with Google Sheets or SQLite.
