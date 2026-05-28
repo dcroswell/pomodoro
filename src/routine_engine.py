@@ -17,3 +17,7 @@ def start_routine(routine_store, routine_id):
             for item_text in routine.get("items", [])
         ],
     }
+
+
+def get_current_routine(active_routine):
+    return active_routine

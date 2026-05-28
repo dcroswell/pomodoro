@@ -1,6 +1,6 @@
 import pytest
 
-from src.routine_engine import list_routines, start_routine
+from src.routine_engine import get_current_routine, list_routines, start_routine
 
 
 def test_list_routines_returns_supplied_routines():
@@ -43,3 +43,18 @@ def test_start_routine_raises_clear_error_for_unknown_routine():
 
     with pytest.raises(ValueError, match="Routine not found: missing-routine"):
         start_routine(routine_store, "missing-routine")
+
+
+def test_get_current_routine_returns_active_routine():
+    active_routine = {
+        "routine_id": "example-routine",
+        "routine_name": "Example Routine",
+        "status": "active",
+        "items": [
+            {"text": "First item", "status": "pending"},
+        ],
+    }
+
+    current_routine = get_current_routine(active_routine)
+
+    assert current_routine == active_routine
