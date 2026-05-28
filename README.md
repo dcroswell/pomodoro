@@ -21,7 +21,7 @@ A Pomodoro in this project does not have to mean a strict 25-minute timer. It me
 
 ## Current status
 
-Ready to begin v0.2: manual data model trial.
+Ready to continue v0.2: manual data model trial.
 
 See `next.md` for the current target and next actions.
 
@@ -30,7 +30,8 @@ See `next.md` for the current target and next actions.
 Early trial:
 
 - Use structured data to define routines and checklist items.
-- Use Google Sheets for a simple manual storage trial.
+- Use repo-tracked CSV files under `data/manual-trial/` for the manual storage trial.
+- Keep trial data directly inspectable through GitHub.
 
 Serious MVP:
 
@@ -47,6 +48,7 @@ Serious MVP:
 - Calendar stores reminders, not checklist state.
 - Data should be structured and easy to migrate.
 - The repo is the single source of truth.
+- Prefer tools and storage that ChatGPT can directly inspect or verify in this project.
 
 ## Core project documents
 
@@ -57,6 +59,20 @@ Serious MVP:
 - `architecture.md` — how phone, backend, storage, and calendar fit together.
 - `progress-log.md` — historical record of completed work and decisions.
 - `next.md` — current target and next actions only.
+- `gpt_project_settings.txt` — ChatGPT Project instruction source text.
+
+## Trial data files
+
+The v0.2 manual trial should use repo-tracked CSV files under `data/manual-trial/`:
+
+- `data/manual-trial/routines.csv`
+- `data/manual-trial/checklist_items.csv`
+- `data/manual-trial/routine_runs.csv`
+- `data/manual-trial/routine_run_items.csv`
+- `data/manual-trial/reminders.csv`
+- `data/manual-trial/daily_review.csv`
+
+These files are preferred over Google Sheets because they can be committed, versioned, reviewed, and directly verified through the GitHub connector.
 
 ## Naming conventions
 
@@ -65,6 +81,7 @@ This repo uses simple, consistent file naming:
 - `README.md` stays uppercase because it is the standard GitHub entry file.
 - Markdown documentation files use lowercase kebab-case, for example `data-model.md` and `progress-log.md`.
 - Folders use lowercase names, for example `docs/`, `src/`, `tests/`, and `data/`.
+- CSV trial data files use lowercase snake_case, for example `checklist_items.csv`.
 - Python files will use lowercase snake_case, for example `routine_engine.py`.
 - Avoid mixed styles such as camelCase, PascalCase, random capitals, or spaces in filenames.
 
@@ -100,14 +117,16 @@ Each work session should follow this simple pattern:
 
 ### Start of session
 
+- Read `versions.md` to confirm the active project version.
 - Read `README.md` for the project overview and working protocol.
 - Read `next.md` to confirm the current target and next actions.
 - Read the latest entry in `progress-log.md` for recent decisions and handoff notes.
+- Read `requirements.md` to confirm scope and constraints.
 - Read specialist documents only when relevant:
-  - `requirements.md` when changing scope or behaviour.
-  - `versions.md` when changing roadmap, milestones, or checklists.
   - `data-model.md` when changing storage, fields, examples, or trial data.
   - `architecture.md` when changing system design, components, or integrations.
+  - `manual-trial.md` when changing v0.2 trial scope, trial files, or trial decisions.
+- Inspect relevant files in `data/`, `docs/`, or project root as needed.
 - Work on one file or one small project step at a time.
 
 ### During session
@@ -118,6 +137,7 @@ Each work session should follow this simple pattern:
 - Update documents only when a decision, milestone, target, requirement, data model, or architecture changes.
 - Prefer one end-of-session documentation checkpoint over frequent small documentation edits.
 - Verify completed steps where possible.
+- Do not treat user-reported completion as verified unless the relevant repo files can be read and checked.
 - Avoid expanding scope unless it is deliberately added to the roadmap.
 - Do not update `next.md` after every tiny action.
 
