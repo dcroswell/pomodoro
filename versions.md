@@ -41,6 +41,9 @@ Create the core project documents and define the project clearly before building
 - [x] `progress-log.md` exists.
 - [x] `next.md` exists.
 - [x] Naming conventions are documented.
+- [ ] First example routine is defined.
+- [ ] Initial storage decision is recorded.
+- [ ] Next build step is clearly identified.
 
 ### Not included
 
