@@ -41,6 +41,22 @@ The Google Sheet should use one tab per data entity:
 
 Shopping list support is not required for this trial unless we deliberately bring it forward.
 
+## Future hooks not required for first trial
+
+The wider data model includes future-friendly hooks such as:
+
+- `RoutineScheduleEvents`
+- `ShoppingList`
+- `routine_type`
+- `action_type`
+- `linked_resource_id`
+
+These are useful for later support such as snoozing, rescheduling, special checklist item behaviour, and shopping list linkage.
+
+They are not required for the first v0.2 Google Sheets trial unless we deliberately bring them forward.
+
+Do not expand v0.2 just because the data model can support these later features.
+
 ## First routine to trial
 
 The first routine to trial is: Wake-up Routine.
