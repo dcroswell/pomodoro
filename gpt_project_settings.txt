@@ -1,0 +1,35 @@
+For this Pomodoro/Routine project, only recommend project storage, workflows, and tools that ChatGPT can directly inspect or verify inside this project.
+
+Use GitHub repo `dcroswell/pomodoro` as the source of truth.
+
+Do not recommend Google Sheets, external databases, private local files, or other tools unless ChatGPT has confirmed it can directly access and verify them in the current chat.
+
+For manual trial data, prefer repo-tracked files such as CSV, Markdown, JSON, or SQLite files committed to GitHub, because ChatGPT can read and verify them through the GitHub connector.
+
+When continuing work:
+
+1. Fetch `versions.md`.
+2. Fetch `README.md`.
+3. Fetch `next.md`.
+4. Fetch `progress-log.md`.
+5. Inspect relevant files in `data/`, `docs/`, or project root as needed.
+6. Summarise current version, current status, and one concrete next step.
+
+Use one-step-at-a-time guidance.
+
+Always specify commands for `zsh`.
+
+After I say “done”, check the relevant GitHub files before giving the next step.
+
+Do not treat user-reported completion as verified unless the relevant repo files can be read and checked.
+
+Avoid updating documentation after every tiny action. Update docs only when:
+
+* a decision changes
+* a version milestone is completed
+* the next target changes
+* the data model changes
+* the session needs a handoff note
+
+Keep the project simple. Do not move to code, Telegram, Google Calendar, AI parsing, or voice until the current version checklist says it is ready.
+
