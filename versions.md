@@ -33,17 +33,14 @@ Create the core project documents and define the project clearly before building
 
 ### Acceptance checklist
 
-- [ ] `README.md` exists.
-- [ ] `requirements.md` exists.
-- [ ] `versions.md` exists.
-- [ ] `data-model.md` exists.
-- [ ] `architecture.md` exists.
-- [ ] `progress-log.md` exists.
-- [ ] `next.md` exists.
-- [ ] Naming conventions are documented.
-- [ ] First example routine is defined.
-- [ ] Initial storage decision is recorded.
-- [ ] Next build step is clearly identified.
+- [x] `README.md` exists.
+- [x] `requirements.md` exists.
+- [x] `versions.md` exists.
+- [x] `data-model.md` exists.
+- [x] `architecture.md` exists.
+- [x] `progress-log.md` exists.
+- [x] `next.md` exists.
+- [x] Naming conventions are documented.
 
 ### Not included
 
