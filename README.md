@@ -69,8 +69,6 @@ This repo uses simple, consistent file naming:
 
 ## Working protocol
 
-Each work session should follow this simple pattern:
-
 ### Markdown file output rule
 
 When providing a full Markdown file for copy/paste:
@@ -84,6 +82,8 @@ When providing a full Markdown file for copy/paste:
   - broken tables
   - incorrect first or last lines
 - For full-file replacements, state the expected first and last line of the file.
+
+Each work session should follow this simple pattern:
 
 ### Start of session
 
