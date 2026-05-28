@@ -3,6 +3,9 @@ def list_routines(routine_store):
 
 
 def start_routine(routine_store, routine_id):
+    if routine_id not in routine_store:
+        raise ValueError(f"Routine not found: {routine_id}")
+
     routine = routine_store[routine_id]
 
     return {

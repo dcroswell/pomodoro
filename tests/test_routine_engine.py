@@ -1,3 +1,5 @@
+import pytest
+
 from src.routine_engine import list_routines, start_routine
 
 
@@ -25,3 +27,14 @@ def test_start_routine_creates_active_routine_state():
     assert active_routine["routine_id"] == "example-routine"
     assert active_routine["routine_name"] == "Example Routine"
     assert active_routine["status"] == "active"
+
+
+def test_start_routine_raises_clear_error_for_unknown_routine():
+    routine_store = {
+        "example-routine": {
+            "name": "Example Routine",
+        }
+    }
+
+    with pytest.raises(ValueError, match="Routine not found: missing-routine"):
+        start_routine(routine_store, "missing-routine")
