@@ -21,9 +21,9 @@ A Pomodoro in this project does not have to mean a strict 25-minute timer. It me
 
 ## Current status
 
-Planning and documentation stage.
+Ready to begin v0.2: manual data model trial.
 
-The first goal is to define the project clearly before building code.
+See `next.md` for the current target and next actions.
 
 ## Intended build direction
 
@@ -48,14 +48,14 @@ Serious MVP:
 - Data should be structured and easy to migrate.
 - The repo is the single source of truth.
 
-## Core project documents to create next
+## Core project documents
 
 - `requirements.md` — what the system must and must not do.
 - `versions.md` — staged roadmap from v0.1 to v1.0.
 - `data-model.md` — how routines, checklists, logs, and reminders are stored.
 - `architecture.md` — how phone, backend, storage, and calendar fit together.
-- `progress-log.md` — running record of what has been done and decided.
-- `next.md` — the next few actions only, to avoid overwhelm.
+- `progress-log.md` — historical record of completed work and decisions.
+- `next.md` — current target and next actions only.
 
 ## Naming conventions
 
@@ -83,8 +83,6 @@ Each work session should follow this simple pattern:
   - `next.md`
 - Confirm the current target from `next.md`.
 - Work on one small step at a time.
-
-### During session
 
 ### During session
 
