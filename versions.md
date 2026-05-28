@@ -121,18 +121,25 @@ SQLite remains the preferred storage option for the serious MVP.
 
 ### Goal
 
-Create the first usable routine tracker using deterministic text commands.
+Create the first usable deterministic routine engine for a text-command routine tracker.
+
+The routine engine is generic and user-driven. Example routines such as Wake-up Routine or Morning Routine are sample data only, not built-in application logic.
 
 ### Includes
 
-- Start a routine.
+- List supplied routines.
+- Start a routine from supplied routine data.
 - Show the current routine.
 - Mark checklist items done.
 - Mark checklist items skipped.
 - Finish a routine.
+- Produce a basic routine completion summary.
 - Save a basic routine log.
+- Keep routine logic deterministic.
 
 ### Example commands
+
+These are the intended text-command behaviours that the engine supports conceptually.
 
 - `/routines`
 - `/start wakeup`
@@ -141,24 +148,39 @@ Create the first usable routine tracker using deterministic text commands.
 - `/skip stretch`
 - `/finish`
 
+The current v0.3 implementation is the underlying routine engine, not a complete command-line interface or bot.
+
 ### Acceptance checklist
 
-- [ ] User can list available routines.
-- [ ] User can start a routine.
-- [ ] User can view the active routine.
-- [ ] User can mark an item done.
-- [ ] User can skip an item.
-- [ ] User can finish the routine.
-- [ ] Routine completion is logged.
-- [ ] Basic manual testing passes.
+- [x] User can list available routines.
+- [x] User can start a routine.
+- [x] User can view the active routine.
+- [x] User can mark an item done.
+- [x] User can skip an item.
+- [x] User can finish the routine.
+- [x] Routine completion is logged.
+- [x] Basic manual testing passes.
+
+### Implementation notes
+
+- The v0.3 engine lives in `src/routine_engine.py`.
+- The v0.3 tests live in `tests/test_routine_engine.py`.
+- `requirements-dev.txt` records the test dependency.
+- `command-workflow.md` defines the first deterministic command workflow.
+- Automated tests passed with `python -m pytest`.
+- Manual end-to-end testing passed using a sample Morning Routine.
+- Routine data is supplied to the engine rather than hard-coded inside the engine.
 
 ### Not included
 
 - Natural language parsing.
 - Voice transcription.
 - Calendar integration.
+- Telegram bot.
+- Full command-line interface.
 - Weekly summaries.
 - Mobile app.
+- Durable SQLite storage.
 
 ---
 
