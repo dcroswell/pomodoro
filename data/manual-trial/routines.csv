@@ -1,2 +1,3 @@
 routine_id,name,routine_type,frequency,default_time,category,active,created_at,updated_at
 wakeup,Wake-up Routine,standard,daily,07:00,health,yes,2026-05-28T09:00:00+10:00,2026-05-28T09:00:00+10:00
+weekly-planning,Weekly Planning,review,weekly,Sunday 17:00,admin,yes,2026-05-28T09:00:00+10:00,2026-05-28T09:00:00+10:00
