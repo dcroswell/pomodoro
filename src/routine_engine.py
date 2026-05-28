@@ -30,3 +30,12 @@ def mark_item_done(active_routine, item_text):
             return active_routine
 
     raise ValueError(f"Checklist item not found: {item_text}")
+
+
+def skip_item(active_routine, item_text):
+    for item in active_routine["items"]:
+        if item["text"] == item_text:
+            item["status"] = "skipped"
+            return active_routine
+
+    raise ValueError(f"Checklist item not found: {item_text}")

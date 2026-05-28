@@ -4,6 +4,7 @@ from src.routine_engine import (
     get_current_routine,
     list_routines,
     mark_item_done,
+    skip_item,
     start_routine,
 )
 
@@ -81,4 +82,23 @@ def test_mark_item_done_updates_matching_item_status():
     assert updated_routine["items"] == [
         {"text": "First item", "status": "done"},
         {"text": "Second item", "status": "pending"},
+    ]
+
+
+def test_skip_item_updates_matching_item_status():
+    active_routine = {
+        "routine_id": "example-routine",
+        "routine_name": "Example Routine",
+        "status": "active",
+        "items": [
+            {"text": "First item", "status": "pending"},
+            {"text": "Second item", "status": "pending"},
+        ],
+    }
+
+    updated_routine = skip_item(active_routine, "Second item")
+
+    assert updated_routine["items"] == [
+        {"text": "First item", "status": "pending"},
+        {"text": "Second item", "status": "skipped"},
     ]
