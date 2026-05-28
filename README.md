@@ -30,7 +30,7 @@ See `next.md` for the current target and next actions.
 Early trial:
 
 - Use structured data to define routines and checklist items.
-- Consider Google Sheets for a simple manual storage trial.
+- Use Google Sheets for a simple manual storage trial.
 
 Serious MVP:
 
@@ -53,6 +53,7 @@ Serious MVP:
 - `requirements.md` — what the system must and must not do.
 - `versions.md` — staged roadmap from v0.1 to v1.0.
 - `data-model.md` — how routines, checklists, logs, and reminders are stored.
+- `manual-trial.md` — active v0.2 manual data model trial notes.
 - `architecture.md` — how phone, backend, storage, and calendar fit together.
 - `progress-log.md` — historical record of completed work and decisions.
 - `next.md` — current target and next actions only.
@@ -69,13 +70,25 @@ This repo uses simple, consistent file naming:
 
 ## Working protocol
 
+### File change rule
+
+When proposing changes to a project file:
+
+- Work on one file at a time unless explicitly asked to group files.
+- Review the current file before proposing a replacement.
+- If the file needs updating, provide the entire replacement document, not only a summary, patch, or vague instruction.
+- Clearly state the expected first and last line of the replacement file.
+- Do not move to the next file until the current file is confirmed as done.
+- If multiple changes belong in the same file, make them in one complete replacement for that file.
+
 ### Markdown file output rule
 
 When providing a full Markdown file for copy/paste:
 
-- Do not wrap the whole file in an outer fenced code block if the file itself contains fenced code blocks.
-- Prefer a downloadable `.md` file for full-file replacements.
-- If copy/paste text is provided instead, avoid nested triple-backtick fences.
+- If the file does not contain internal triple-backtick code fences, provide the full file inside one copyable `markdown` code block.
+- If the file does contain internal triple-backtick code fences, do not wrap the whole file in another triple-backtick code block.
+- Do not wrap the file in a writing block such as `:::writing`.
+- Prefer a downloadable `.md` file for full-file replacements when practical.
 - Check the Markdown before providing it for:
   - accidental wrapper text such as `:::writing`
   - unbalanced triple-backtick fences
@@ -95,12 +108,12 @@ Each work session should follow this simple pattern:
   - `versions.md` when changing roadmap, milestones, or checklists.
   - `data-model.md` when changing storage, fields, examples, or trial data.
   - `architecture.md` when changing system design, components, or integrations.
-- Work on one small step at a time.
+- Work on one file or one small project step at a time.
 
 ### During session
 
 - Work on the project first; documentation should support the work, not replace it.
-- Work in small, clear steps, but group related edits together where practical.
+- Work in small, clear steps, but group related edits within the same file where practical.
 - If multiple changes belong in the same file, make them in one edit and commit once.
 - Update documents only when a decision, milestone, target, requirement, data model, or architecture changes.
 - Prefer one end-of-session documentation checkpoint over frequent small documentation edits.
