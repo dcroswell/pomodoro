@@ -4,7 +4,7 @@ This document shows only the current target and the next few actions. It should 
 
 ## Current target
 
-Begin v0.3: deterministic text-command routine tracker.
+Finish the v0.3 documentation checkpoint, then begin v0.4: routine logging and daily review.
 
 ## Current status
 
@@ -12,28 +12,34 @@ v0.1 planning and documentation baseline is complete.
 
 v0.2 manual data model trial is complete.
 
-Verified v0.2 outcomes:
+v0.3 deterministic routine engine is functionally complete.
 
-- Repo-tracked CSV files exist under `data/manual-trial/`.
-- At least one daily routine is defined.
-- At least one weekly routine is defined.
-- At least one longer-term recurring reminder is defined.
-- Checklist items are stored as separate records.
-- At least one routine run is logged.
-- At least one routine run item is logged.
-- Completed and skipped checklist items can be tracked.
-- The CSV model is simple enough for the manual trial.
-- SQLite remains the preferred storage option for the serious MVP.
+Verified v0.3 outcomes:
 
-The next phase is v0.3.
+- `command-workflow.md` defines the first deterministic command workflow.
+- `src/routine_engine.py` contains the routine engine.
+- `tests/test_routine_engine.py` contains automated tests.
+- `requirements-dev.txt` records the test dependency.
+- The routine engine is generic and user-driven.
+- Example routines are sample data only, not built-in application logic.
+- User-supplied routines can be listed.
+- A routine can be started.
+- The active routine can be viewed.
+- Checklist items can be marked done.
+- Checklist items can be skipped.
+- A routine can be finished.
+- A basic completion summary is produced.
+- A finished routine can be added to a routine log.
+- Automated tests pass.
+- Manual end-to-end testing passed.
 
-v0.3 should start with deterministic text commands before writing code.
+The next phase is v0.4: routine logging and daily review.
 
 ## Next 3 actions
 
-1. Define the first deterministic text-command workflow for the Wake-up Routine.
-2. Decide the smallest command set needed for v0.3.
-3. Only after the workflow is clear, decide whether to create a small command spec or start minimal code.
+1. Update `README.md` so it references `command-workflow.md` and no longer says v0.2 is the current target.
+2. Confirm the v0.3 documentation checkpoint is complete.
+3. Start v0.4 by defining the smallest durable routine log fields needed before changing storage.
 
 ## Do not work on yet
 
