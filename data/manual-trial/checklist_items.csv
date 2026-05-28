@@ -1,0 +1,5 @@
+item_id,routine_id,item_order,item_text,action_type,linked_resource_id,active,created_at,updated_at
+wakeup-001,wakeup,1,Brush teeth,checklist,,yes,2026-05-28T09:00:00+10:00,2026-05-28T09:00:00+10:00
+wakeup-002,wakeup,2,Make coffee,checklist,,yes,2026-05-28T09:00:00+10:00,2026-05-28T09:00:00+10:00
+wakeup-003,wakeup,3,Take pills,checklist,,yes,2026-05-28T09:00:00+10:00,2026-05-28T09:00:00+10:00
+wakeup-004,wakeup,4,Drink water,checklist,,yes,2026-05-28T09:00:00+10:00,2026-05-28T09:00:00+10:00
