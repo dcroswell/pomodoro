@@ -41,6 +41,22 @@ The Google Sheet should use one tab per data entity:
 
 Shopping list support is not required for this trial unless we deliberately bring it forward.
 
+## Trial simplification decisions
+
+The v0.2 manual trial should avoid duplicate data where practical.
+
+For the current proof of concept:
+
+- `routine_runs` records that a routine happened.
+- `routine_runs` does not store `completed_count` or `total_count`.
+- `routine_run_items` records item-level completion.
+- completed and skipped counts can be derived from `routine_run_items`.
+- `daily_review` stays lightweight.
+- `daily_review` uses only `review_id`, `review_date`, and `notes`.
+- `daily_review` does not duplicate routine completion fields such as `wake_up_completed` or `exercise_completed`.
+
+This keeps the Google Sheet closer to a clean relational model and makes later migration to SQLite easier.
+
 ## Future hooks not required for first trial
 
 The wider data model includes future-friendly hooks such as:
