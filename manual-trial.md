@@ -10,9 +10,11 @@ The goal is to confirm that the structure feels practical for real daily use.
 
 ## Storage decision
 
-The v0.2 manual data model trial will start with Google Sheets.
+The v0.2 manual data model trial uses repo-tracked CSV files stored under `data/manual-trial/`.
 
-Google Sheets is being used for the trial because it is easy to inspect, edit, and adjust manually.
+Repo-tracked CSV files are being used because they are simple, structured, version-controlled, and directly inspectable by ChatGPT through the GitHub connector.
+
+Google Sheets is not used for the trial because ChatGPT cannot directly verify Google Sheets from this project.
 
 SQLite remains the preferred storage option for the serious MVP because it is better suited to reliable application state, backups, testing, and long-term structured storage.
 
@@ -28,16 +30,16 @@ The manual trial should include:
 - at least one example routine run item
 - enough sample data to test whether the model feels usable
 
-## Trial tabs
+## Trial files
 
-The Google Sheet should use one tab per data entity:
+The repo should store one CSV file per data entity under `data/manual-trial/`:
 
-- `routines`
-- `checklist_items`
-- `routine_runs`
-- `routine_run_items`
-- `reminders`
-- `daily_review`
+- `data/manual-trial/routines.csv`
+- `data/manual-trial/checklist_items.csv`
+- `data/manual-trial/routine_runs.csv`
+- `data/manual-trial/routine_run_items.csv`
+- `data/manual-trial/reminders.csv`
+- `data/manual-trial/daily_review.csv`
 
 Shopping list support is not required for this trial unless we deliberately bring it forward.
 
@@ -55,7 +57,7 @@ For the current proof of concept:
 - `daily_review` uses only `review_id`, `review_date`, and `notes`.
 - `daily_review` does not duplicate routine completion fields such as `wake_up_completed` or `exercise_completed`.
 
-This keeps the Google Sheet closer to a clean relational model and makes later migration to SQLite easier.
+This keeps the CSV files closer to a clean relational model and makes later migration to SQLite easier.
 
 ## Future hooks not required for first trial
 
@@ -69,7 +71,7 @@ The wider data model includes future-friendly hooks such as:
 
 These are useful for later support such as snoozing, rescheduling, special checklist item behaviour, and shopping list linkage.
 
-They are not required for the first v0.2 Google Sheets trial unless we deliberately bring them forward.
+They are not required for the first v0.2 CSV trial unless we deliberately bring them forward.
 
 Do not expand v0.2 just because the data model can support these later features.
 
