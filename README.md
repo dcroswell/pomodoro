@@ -64,5 +64,33 @@ This repo uses simple, consistent file naming:
 - `README.md` stays uppercase because it is the standard GitHub entry file.
 - Markdown documentation files use lowercase kebab-case, for example `data-model.md` and `progress-log.md`.
 - Folders use lowercase names, for example `docs/`, `src/`, `tests/`, and `data/`.
-- Python files will use lowercase snake_case, for example `routine_engine.py`.
-- Avoid mixed styles such as camelCase, PascalCase, random capitals, or spaces in filenames.
+- Python files will use lowercase snake_case, for example `routine_engine.- Avoid mixed styles such as camelCase, PascalCase, random capitals, or spaces in filenames.
+
+## Working protocol
+
+Each work session should follow this simple pattern:
+
+### Start of session
+
+- Read the core project documents:
+  - `README.md`
+  - `requirements.md`
+  - `versions.md`
+  - `data-model.md`
+  - `architecture.md`
+  - `progress-log.md`
+  - `next.md`
+- Confirm the current target from `next.md`.
+- Work on one small step at a time.
+
+### During session
+
+- Verify completed steps where possible.
+- Avoid expanding scope unless it is deliberately added to the roadmap.
+- Do not update `next.md` after every tiny action.
+
+### End of session
+
+- Update `progress-log.md` with what was completed and decided.
+- Update `next.md` only if the next target has changed or the session is ending.
+- Commit and push the documentation checkpoint.
