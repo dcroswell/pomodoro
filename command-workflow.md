@@ -1,4 +1,3 @@
-cat > command-workflow.md <<'EOF'
 # Command Workflow
 
 This document defines the first deterministic text-command workflow for v0.3.
@@ -193,4 +192,3 @@ This workflow is good enough for v0.3 planning when:
 - The routine can be finished.
 - Errors are handled without guessing.
 - No AI, voice, Telegram, or calendar behaviour is implemented yet.
-EOF
