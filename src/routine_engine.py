@@ -55,3 +55,8 @@ def finish_routine(active_routine):
     active_routine["summary"] = summary
 
     return active_routine
+
+
+def log_finished_routine(routine_log, finished_routine):
+    routine_log.append(finished_routine)
+    return routine_log

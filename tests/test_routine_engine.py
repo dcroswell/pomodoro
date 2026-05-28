@@ -4,6 +4,7 @@ from src.routine_engine import (
     finish_routine,
     get_current_routine,
     list_routines,
+    log_finished_routine,
     mark_item_done,
     skip_item,
     start_routine,
@@ -125,3 +126,21 @@ def test_finish_routine_marks_routine_finished_and_returns_summary():
         "skipped": 1,
         "pending": 1,
     }
+
+
+def test_log_finished_routine_adds_finished_routine_to_log():
+    routine_log = []
+    finished_routine = {
+        "routine_id": "example-routine",
+        "routine_name": "Example Routine",
+        "status": "finished",
+        "summary": {
+            "done": 1,
+            "skipped": 0,
+            "pending": 0,
+        },
+    }
+
+    updated_log = log_finished_routine(routine_log, finished_routine)
+
+    assert updated_log == [finished_routine]
