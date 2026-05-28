@@ -102,7 +102,7 @@ SQLite remains the preferred storage option for the serious MVP.
 - [x] At least one routine run item is logged.
 - [x] Completed and skipped checklist items can be tracked.
 - [x] Storage format can be migrated later.
-- [ ] The model feels simple enough to actually use.
+- [x] The model feels simple enough to actually use.
 
 ### Not included
 
