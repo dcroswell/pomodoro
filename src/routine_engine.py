@@ -39,3 +39,19 @@ def skip_item(active_routine, item_text):
             return active_routine
 
     raise ValueError(f"Checklist item not found: {item_text}")
+
+
+def finish_routine(active_routine):
+    summary = {
+        "done": 0,
+        "skipped": 0,
+        "pending": 0,
+    }
+
+    for item in active_routine["items"]:
+        summary[item["status"]] += 1
+
+    active_routine["status"] = "finished"
+    active_routine["summary"] = summary
+
+    return active_routine

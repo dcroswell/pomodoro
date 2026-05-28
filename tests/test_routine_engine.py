@@ -1,6 +1,7 @@
 import pytest
 
 from src.routine_engine import (
+    finish_routine,
     get_current_routine,
     list_routines,
     mark_item_done,
@@ -102,3 +103,25 @@ def test_skip_item_updates_matching_item_status():
         {"text": "First item", "status": "pending"},
         {"text": "Second item", "status": "skipped"},
     ]
+
+
+def test_finish_routine_marks_routine_finished_and_returns_summary():
+    active_routine = {
+        "routine_id": "example-routine",
+        "routine_name": "Example Routine",
+        "status": "active",
+        "items": [
+            {"text": "First item", "status": "done"},
+            {"text": "Second item", "status": "skipped"},
+            {"text": "Third item", "status": "pending"},
+        ],
+    }
+
+    finished_routine = finish_routine(active_routine)
+
+    assert finished_routine["status"] == "finished"
+    assert finished_routine["summary"] == {
+        "done": 1,
+        "skipped": 1,
+        "pending": 1,
+    }
