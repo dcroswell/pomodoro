@@ -13,6 +13,10 @@ The goal is to keep the data structured from the beginning so it can start in Go
 - Keep scheduled routine occurrences separate from routine templates.
 - Keep calendar reminders separate from checklist state.
 - Use routine types and checklist item action types to allow future special behaviour without rebuilding the core routine engine.
+- Avoid duplicating data that can be referenced or derived from linked records.
+- Let `RoutineRuns` record that a routine happened.
+- Let `RoutineRunItems` record item-level completion.
+- Keep `DailyReview` lightweight during the v0.2 manual trial.
 - Include `created_at`, `updated_at`, and `active` fields where useful.
 - Avoid deleting historical records unless there is a clear reason.
 - Prefer marking old records inactive rather than removing them.
@@ -110,6 +114,8 @@ Stores each time a routine is started.
 
 A routine template can have many routine runs.
 
+This table records the run itself. It should not duplicate item-level completion counts. Completion details should come from `RoutineRunItems`.
+
 ### Fields
 
 | Field | Purpose | Example |
@@ -120,15 +126,14 @@ A routine template can have many routine runs.
 | `start_time` | Start timestamp | `2026-05-28T07:05:00+10:00` |
 | `end_time` | Finish timestamp | `2026-05-28T07:28:00+10:00` |
 | `status` | Run status | `active`, `completed`, `cancelled` |
-| `completed_count` | Number of completed items | `4` |
-| `total_count` | Number of items in run | `4` |
 | `notes` | Optional notes | `Good start` |
 
 ### Example
 
-| run_id | routine_id | run_date | start_time | end_time | status | completed_count | total_count |
-|---|---|---|---|---|---|---:|---:|
-| `2026-05-28-wakeup-001` | `wakeup` | `2026-05-28` | `07:05` | `07:28` | `completed` | 4 | 4 |
+| run_id | routine_id | run_date | start_time | end_time | status | notes |
+|---|---|---|---|---|---|---|
+| `2026-05-28-wakeup-001` | `wakeup` | `2026-05-28` | `07:05` | `07:28` | `completed` | `Good start` |
+| `2026-05-29-wakeup-001` | `wakeup` | `2026-05-29` | `07:20` | `07:38` | `completed` | `Late start; skipped coffee` |
 
 ---
 
@@ -137,6 +142,10 @@ A routine template can have many routine runs.
 Stores the completion status of each checklist item for a specific routine run.
 
 This allows the system to record which items were done, skipped, or missed.
+
+This table is the source of truth for item-level completion. Summary counts can be calculated from this table if needed.
+
+The `item_text`, `action_type`, and `linked_resource_id` fields are intentionally copied from the checklist item at the time of the run. This preserves history if the template changes later.
 
 ### Fields
 
@@ -154,10 +163,11 @@ This allows the system to record which items were done, skipped, or missed.
 
 ### Example
 
-| run_item_id | run_id | item_id | item_text | action_type | linked_resource_id | status | completed_time |
-|---|---|---|---|---|---|---|---|
-| `2026-05-28-wakeup-001-item-001` | `2026-05-28-wakeup-001` | `wakeup-001` | `Brush teeth` | `checklist` |  | `done` | `07:08` |
-| `2026-05-28-wakeup-001-item-002` | `2026-05-28-wakeup-001` | `wakeup-002` | `Make coffee` | `checklist` |  | `done` | `07:12` |
+| run_item_id | run_id | item_id | item_text | action_type | linked_resource_id | status | completed_time | notes |
+|---|---|---|---|---|---|---|---|---|
+| `2026-05-28-wakeup-001-item-001` | `2026-05-28-wakeup-001` | `wakeup-001` | `Brush teeth` | `checklist` |  | `done` | `07:08` |  |
+| `2026-05-28-wakeup-001-item-002` | `2026-05-28-wakeup-001` | `wakeup-002` | `Make coffee` | `checklist` |  | `done` | `07:12` |  |
+| `2026-05-29-wakeup-001-item-002` | `2026-05-29-wakeup-001` | `wakeup-002` | `Make coffee` | `checklist` |  | `skipped` | `07:25` | `Skipped due to late start` |
 
 ---
 
@@ -187,6 +197,7 @@ Google Calendar may contain the actual reminder event, but this table stores the
 |---|---|---|---|---|---|
 | `skin-check-2026-11` | `Book skin cancer check` | `six-monthly` | `2026-11-28` | `skin-check` | `active` |
 | `doctor-booking-2026-06` | `Book doctor appointment` | `one-off` | `2026-06-28` |  | `active` |
+| `wakeup-daily-0700` | `Start Wake-up Routine` | `daily` | `2026-05-30` | `wakeup` | `active` |
 
 ---
 
@@ -228,7 +239,7 @@ This does not need to be fully tested in the first v0.2 manual trial, but the mo
 
 Stores shopping list items.
 
-This is not part of the first planning milestone, but it is included in the data model because it is a likely later feature.
+This is not part of the first manual trial, but it is included in the data model because it is a likely later feature.
 
 Shopping list items may optionally link back to a routine and checklist item. This allows a Chores Routine to include a Grocery shopping task that opens or manages a shopping list later.
 
@@ -250,7 +261,11 @@ Shopping list items may optionally link back to a routine and checklist item. Th
 
 ## DailyReview
 
-Stores the end-of-day review.
+Stores a simple end-of-day note.
+
+For the v0.2 manual trial, this table should stay lightweight. It should not duplicate whether specific routines were completed. Routine completion should be derived from `RoutineRuns`, and item-level completion should be derived from `RoutineRunItems`.
+
+More detailed review fields, such as achievements, carry-over tasks, step count, or gym completion, may be added later if needed.
 
 ### Fields
 
@@ -258,24 +273,24 @@ Stores the end-of-day review.
 |---|---|---|
 | `review_id` | Stable review ID | `review-2026-05-28` |
 | `review_date` | Review date | `2026-05-28` |
-| `wake_up_completed` | Wake-up routine done? | `yes` |
-| `exercise_completed` | Exercise routine done? | `yes` |
-| `steps` | Step count if recorded | `8000` |
-| `gym_completed` | Gym done? | `no` |
-| `main_achievement` | Main win for the day | `Created project docs` |
-| `carry_over` | Things to move to tomorrow | `Finish data model` |
-| `notes` | General notes | `Good momentum` |
-| `created_at` | Created timestamp | `2026-05-28T20:30:00+10:00` |
+| `notes` | Simple end-of-day note | `Good start; first manual trial structure created.` |
+
+### Example
+
+| review_id | review_date | notes |
+|---|---|---|
+| `review-2026-05-28` | `2026-05-28` | `Good start; first manual trial structure created.` |
+| `review-2026-05-29` | `2026-05-29` | `Late start; skipped coffee but completed the rest of the Wake-up Routine.` |
 
 ---
 
 ## Storage decision
 
-The storage approach may change by version:
+The storage approach may change by version.
 
 ### Trial storage
 
-Google Sheets may be used to manually test this model because it is easy to inspect and edit.
+Google Sheets is used for the v0.2 manual trial because it is easy to inspect and edit.
 
 ### Long-term storage
 
