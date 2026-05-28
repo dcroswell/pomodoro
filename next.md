@@ -4,24 +4,35 @@ This document shows only the current target and the next few actions. It should 
 
 ## Current target
 
-Clean up the project documents, then continue the v0.2 Google Sheets manual data model trial.
+Finish switching the v0.2 manual data model trial from Google Sheets to repo-tracked CSV files, then create the initial CSV trial data.
 
 ## Current status
 
-v0.1 planning and documentation baseline is mostly complete.
+v0.1 planning and documentation baseline is complete.
 
-The v0.2 storage decision has been made:
+The v0.2 storage decision has changed:
 
-- Use Google Sheets for the manual data model trial.
+- Use repo-tracked CSV files under `data/manual-trial/` for the manual data model trial.
+- Do not use Google Sheets for the trial because ChatGPT cannot directly verify Google Sheets from this project.
 - Keep SQLite as the preferred storage option for the serious MVP.
 
-The main remaining documentation cleanup issue is that `architecture.md` exists but still needs real content.
+Updated so far:
+
+- `versions.md`
+- `manual-trial.md`
+- `README.md`
+- `architecture.md`
+
+Still to update or verify:
+
+- `progress-log.md`
+- initial CSV files under `data/manual-trial/`
 
 ## Next 3 actions
 
-1. Update `architecture.md` with the actual system architecture.
-2. Review `versions.md` so it matches the current Google Sheets decision and architecture status.
-3. Continue the v0.2 Google Sheets manual trial with the Wake-up Routine.
+1. Update `progress-log.md` with the storage decision change and documentation updates.
+2. Create the initial CSV files under `data/manual-trial/`.
+3. Verify the CSV files from GitHub before continuing the v0.2 manual trial.
 
 ## Do not work on yet
 
