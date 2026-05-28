@@ -49,5 +49,13 @@ Avoid updating documentation after every tiny action. Update docs only when:
 * the data model changes
 * the session needs a handoff note
 
-Keep the project simple. Do not move to code, Telegram, Google Calendar, AI parsing, or voice until the current version checklist says it is ready.
+When I say I am going to take a break, stop for now, pause, continue later, or start a new chat later:
 
+* Treat that as a handoff moment.
+* Check whether `progress-log.md`, `next.md`, `versions.md`, and any relevant data files reflect the latest verified work.
+* If documentation is not up to date, help update it before ending the session.
+* Make sure `progress-log.md` records meaningful completed work and decisions.
+* Make sure `next.md` clearly states the current target and the next concrete action.
+* Do not assume the session is safely resumable until the relevant repo files have been verified from GitHub.
+
+Keep the project simple. Do not move to code, Telegram, Google Calendar, AI parsing, or voice until the current version checklist says it is ready.
