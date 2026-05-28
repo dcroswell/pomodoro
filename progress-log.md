@@ -14,6 +14,8 @@ This document records what has been done, what has been decided, and what should
 - Added `data-model.md`.
 - Added `architecture.md`.
 - Added `progress-log.md`.
+- Added `next.md`.
+- Added working protocol to `README.md`.
 - Completed the v0.1 planning and documentation checklist in `versions.md`.
 
 ### Key decisions
