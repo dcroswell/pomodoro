@@ -1,1 +1,5 @@
 run_item_id,run_id,item_id,item_text,action_type,linked_resource_id,status,completed_time,notes
+2026-05-28-wakeup-001-item-001,2026-05-28-wakeup-001,wakeup-001,Brush teeth,checklist,,done,2026-05-28T07:08:00+10:00,
+2026-05-28-wakeup-001-item-002,2026-05-28-wakeup-001,wakeup-002,Make coffee,checklist,,done,2026-05-28T07:12:00+10:00,
+2026-05-28-wakeup-001-item-003,2026-05-28-wakeup-001,wakeup-003,Take pills,checklist,,done,2026-05-28T07:16:00+10:00,
+2026-05-28-wakeup-001-item-004,2026-05-28-wakeup-001,wakeup-004,Drink water,checklist,,done,2026-05-28T07:20:00+10:00,

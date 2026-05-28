@@ -1,1 +1,2 @@
 run_id,routine_id,run_date,start_time,end_time,status,notes
+2026-05-28-wakeup-001,wakeup,2026-05-28,2026-05-28T07:05:00+10:00,2026-05-28T07:28:00+10:00,completed,Good start

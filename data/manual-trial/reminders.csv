@@ -1,1 +1,2 @@
 reminder_id,title,frequency,next_due_date,routine_id,calendar_event_id,status,created_at,updated_at
+skin-check-2026-11,Book skin cancer check,six-monthly,2026-11-28,skin-check,,active,2026-05-28T09:00:00+10:00,2026-05-28T09:00:00+10:00
