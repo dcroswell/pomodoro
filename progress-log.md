@@ -52,3 +52,6 @@ The project is in the planning and documentation stage.
 
 The next goal is to Start v0.2 manual data model trial.
 
+### Handoff
+
+See `next.md` for the current target and next actions.
