@@ -71,6 +71,20 @@ This repo uses simple, consistent file naming:
 
 Each work session should follow this simple pattern:
 
+### Markdown file output rule
+
+When providing a full Markdown file for copy/paste:
+
+- Do not wrap the whole file in an outer fenced code block if the file itself contains fenced code blocks.
+- Prefer a downloadable `.md` file for full-file replacements.
+- If copy/paste text is provided instead, avoid nested triple-backtick fences.
+- Check the Markdown before providing it for:
+  - accidental wrapper text such as `:::writing`
+  - unbalanced triple-backtick fences
+  - broken tables
+  - incorrect first or last lines
+- For full-file replacements, state the expected first and last line of the file.
+
 ### Start of session
 
 - Read `README.md` for the project overview and working protocol.
