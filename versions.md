@@ -42,8 +42,8 @@ Create the core project documents and define the project clearly before building
 - [x] `next.md` exists.
 - [x] Naming conventions are documented.
 - [x] First example routine is defined.
-- [ ] Initial storage decision is recorded.
-- [ ] Next build step is clearly identified.
+- [x] Initial storage decision is recorded.
+- [x] Next build step is clearly identified.
 
 ### Not included
 
