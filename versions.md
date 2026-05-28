@@ -100,7 +100,7 @@ SQLite remains the preferred storage option for the serious MVP.
 - [x] Checklist items are stored as separate records, not as one large text block.
 - [x] At least one routine run is logged.
 - [x] At least one routine run item is logged.
-- [ ] Completed and skipped checklist items can be tracked.
+- [x] Completed and skipped checklist items can be tracked.
 - [x] Storage format can be migrated later.
 - [ ] The model feels simple enough to actually use.
 
