@@ -75,9 +75,18 @@ The command handler can change later, but the routine engine should stay stable.
 
 ## Storage choice
 
-The current v0.2 manual data model trial uses Google Sheets.
+The current v0.2 manual data model trial uses repo-tracked CSV files under `data/manual-trial/`.
 
-Google Sheets is suitable for v0.2 because it is easy to inspect, edit, and adjust manually.
+Repo-tracked CSV files are suitable for v0.2 because they are:
+
+- simple
+- structured
+- version-controlled
+- easy to inspect
+- easy to migrate later
+- directly verifiable by ChatGPT through the GitHub connector
+
+Google Sheets is not used for the trial because ChatGPT cannot directly verify Google Sheets from this project.
 
 SQLite remains the preferred storage option for the serious MVP because it is better for:
 
@@ -112,6 +121,15 @@ The first trial should focus on:
 - routine run items
 - reminders
 - daily review
+
+The v0.2 CSV trial should store these first-trial entities in:
+
+- `data/manual-trial/routines.csv`
+- `data/manual-trial/checklist_items.csv`
+- `data/manual-trial/routine_runs.csv`
+- `data/manual-trial/routine_run_items.csv`
+- `data/manual-trial/reminders.csv`
+- `data/manual-trial/daily_review.csv`
 
 `RoutineScheduleEvents` and `ShoppingList` are future-friendly hooks. They should not expand the first manual trial unless deliberately brought forward.
 
