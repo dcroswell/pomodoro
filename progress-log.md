@@ -48,10 +48,9 @@ This document records what has been done, what has been decided, and what should
 
 ### Current status
 
-The project is in the planning and documentation stage.
-
-The next goal is to Start v0.2 manual data model trial.
+Ready to begin v0.2: manual data model trial.
 
 ### Handoff
 
 See `next.md` for the current target and next actions.
+
