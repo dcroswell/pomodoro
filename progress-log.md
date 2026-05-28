@@ -100,3 +100,54 @@ The initial CSV files still need to be created under `data/manual-trial/`.
 ### Handoff
 
 Create the initial CSV files under `data/manual-trial/` and verify them from GitHub before continuing the v0.2 manual trial.
+
+---
+
+## 2026-05-28 — v0.2 manual data model trial complete
+
+### Done
+
+- Created repo-tracked CSV files under `data/manual-trial/`.
+- Added a daily Wake-up Routine to `routines.csv`.
+- Added a Weekly Planning routine to `routines.csv`.
+- Added separate checklist item records to `checklist_items.csv`.
+- Added example Wake-up Routine runs to `routine_runs.csv`.
+- Added item-level completion records to `routine_run_items.csv`.
+- Added both `done` and `skipped` checklist item examples.
+- Added a six-monthly skin cancer check reminder to `reminders.csv`.
+- Added a lightweight daily review row to `daily_review.csv`.
+- Fixed a relational consistency issue by adding the missing parent routine run for a skipped item.
+- Verified the v0.2 CSV data from GitHub.
+- Updated `versions.md` so all v0.2 acceptance checklist items are complete.
+- Updated `gpt_project_settings.txt` with a handoff rule for breaks, pauses, and continuing later.
+
+### Key decisions
+
+- v0.2 is complete.
+- The repo-tracked CSV model is simple enough for the manual trial.
+- CSV is suitable for proving the structure but is not intended as the serious long-term app storage.
+- SQLite remains the preferred storage option for the serious MVP.
+- Do not move directly to Telegram, Google Calendar, AI parsing, or voice.
+- The next phase is v0.3: deterministic text-command routine tracker.
+
+### Current project documents
+
+- `README.md`
+- `requirements.md`
+- `versions.md`
+- `data-model.md`
+- `manual-trial.md`
+- `architecture.md`
+- `progress-log.md`
+- `next.md`
+- `gpt_project_settings.txt`
+
+### Current status
+
+v0.2 manual data model trial is complete.
+
+The project is ready to begin v0.3.
+
+### Handoff
+
+Start v0.3 by defining the first deterministic text-command workflow before writing code.
