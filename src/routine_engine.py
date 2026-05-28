@@ -21,3 +21,12 @@ def start_routine(routine_store, routine_id):
 
 def get_current_routine(active_routine):
     return active_routine
+
+
+def mark_item_done(active_routine, item_text):
+    for item in active_routine["items"]:
+        if item["text"] == item_text:
+            item["status"] = "done"
+            return active_routine
+
+    raise ValueError(f"Checklist item not found: {item_text}")

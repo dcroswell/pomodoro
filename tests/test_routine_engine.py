@@ -1,6 +1,11 @@
 import pytest
 
-from src.routine_engine import get_current_routine, list_routines, start_routine
+from src.routine_engine import (
+    get_current_routine,
+    list_routines,
+    mark_item_done,
+    start_routine,
+)
 
 
 def test_list_routines_returns_supplied_routines():
@@ -58,3 +63,22 @@ def test_get_current_routine_returns_active_routine():
     current_routine = get_current_routine(active_routine)
 
     assert current_routine == active_routine
+
+
+def test_mark_item_done_updates_matching_item_status():
+    active_routine = {
+        "routine_id": "example-routine",
+        "routine_name": "Example Routine",
+        "status": "active",
+        "items": [
+            {"text": "First item", "status": "pending"},
+            {"text": "Second item", "status": "pending"},
+        ],
+    }
+
+    updated_routine = mark_item_done(active_routine, "First item")
+
+    assert updated_routine["items"] == [
+        {"text": "First item", "status": "done"},
+        {"text": "Second item", "status": "pending"},
+    ]
