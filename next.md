@@ -4,39 +4,39 @@ This document shows only the current target and the next few actions. It should 
 
 ## Current target
 
-Finish switching the v0.2 manual data model trial from Google Sheets to repo-tracked CSV files, then create the initial CSV trial data.
+Begin v0.3: deterministic text-command routine tracker.
 
 ## Current status
 
 v0.1 planning and documentation baseline is complete.
 
-The v0.2 storage decision has changed:
+v0.2 manual data model trial is complete.
 
-- Use repo-tracked CSV files under `data/manual-trial/` for the manual data model trial.
-- Do not use Google Sheets for the trial because ChatGPT cannot directly verify Google Sheets from this project.
-- Keep SQLite as the preferred storage option for the serious MVP.
+Verified v0.2 outcomes:
 
-Updated so far:
+- Repo-tracked CSV files exist under `data/manual-trial/`.
+- At least one daily routine is defined.
+- At least one weekly routine is defined.
+- At least one longer-term recurring reminder is defined.
+- Checklist items are stored as separate records.
+- At least one routine run is logged.
+- At least one routine run item is logged.
+- Completed and skipped checklist items can be tracked.
+- The CSV model is simple enough for the manual trial.
+- SQLite remains the preferred storage option for the serious MVP.
 
-- `versions.md`
-- `manual-trial.md`
-- `README.md`
-- `architecture.md`
+The next phase is v0.3.
 
-Still to update or verify:
-
-- `progress-log.md`
-- initial CSV files under `data/manual-trial/`
+v0.3 should start with deterministic text commands before writing code.
 
 ## Next 3 actions
 
-1. Update `progress-log.md` with the storage decision change and documentation updates.
-2. Create the initial CSV files under `data/manual-trial/`.
-3. Verify the CSV files from GitHub before continuing the v0.2 manual trial.
+1. Define the first deterministic text-command workflow for the Wake-up Routine.
+2. Decide the smallest command set needed for v0.3.
+3. Only after the workflow is clear, decide whether to create a small command spec or start minimal code.
 
 ## Do not work on yet
 
-- Code
 - Telegram bot
 - Google Calendar integration
 - AI parsing
