@@ -2,6 +2,23 @@
 
 This document records what has been done and what has been decided.
 
+## 2026-10-13 — v0.3 documentation checkpoint complete
+
+### Done
+
+- Confirmed `versions.md` marks every v0.3 acceptance item complete.
+- Confirmed `README.md` references `command-workflow.md` and correctly describes the completed generic deterministic engine, its code and tests, and its current limits.
+- Updated `next.md` to mark v0.3 and its documentation checkpoint complete, remove the completed README update and checkpoint actions, and leave one immediate v0.4 task.
+- Added this final checkpoint entry; preserved all historical entries.
+- Left `README.md` and `versions.md` unchanged. No code, tests, dependencies, storage, or data-model fields were changed.
+- Reviewed documentation status, scope, and Git diff. Existing v0.3 test results remain historical evidence; the Python test suite was not rerun for this documentation-only task.
+
+### Handoff
+
+Define the minimum durable routine-run log fields for v0.4 using the roadmap in `versions.md` and the existing `RoutineRuns` and `RoutineRunItems` model in `data-model.md`, before implementing fields or changing storage.
+
+---
+
 ## 2026-05-29 — v0.3 deterministic routine engine complete
 
 ### Done

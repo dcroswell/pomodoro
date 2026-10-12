@@ -4,7 +4,7 @@ This document shows only the current target and the next few actions. It should 
 
 ## Current target
 
-Finish the v0.3 documentation checkpoint, then begin v0.4: routine logging and daily review.
+Define the minimum durable routine-run log fields for v0.4: routine logging and daily review, using `versions.md` and the existing `RoutineRuns` and `RoutineRunItems` model in `data-model.md`, before changing storage or code.
 
 ## Current status
 
@@ -12,7 +12,7 @@ v0.1 planning and documentation baseline is complete.
 
 v0.2 manual data model trial is complete.
 
-v0.3 deterministic routine engine is functionally complete.
+v0.3 deterministic routine engine and documentation checkpoint are complete.
 
 Verified v0.3 outcomes:
 
@@ -35,11 +35,9 @@ Verified v0.3 outcomes:
 
 The next phase is v0.4: routine logging and daily review.
 
-## Next 3 actions
+## Next action
 
-1. Update `README.md` so it references `command-workflow.md` and no longer says v0.2 is the current target.
-2. Confirm the v0.3 documentation checkpoint is complete.
-3. Start v0.4 by defining the smallest durable routine log fields needed before changing storage.
+1. Define the minimum durable routine-run log fields using the v0.4 roadmap in `versions.md` and `RoutineRuns` / `RoutineRunItems` in `data-model.md`. This is a field-definition task only; do not implement fields or change storage yet.
 
 ## Do not work on yet
 
