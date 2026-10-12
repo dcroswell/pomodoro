@@ -23,7 +23,7 @@ A Pomodoro in this project does not have to mean a strict 25-minute timer. It me
 
 v0.3 deterministic routine engine is functionally complete.
 
-The current target is to finish the v0.3 documentation checkpoint, then begin v0.4: routine logging and daily review.
+The v0.3 documentation checkpoint is complete. The next phase is v0.4: routine logging and daily review; see `next.md` for the current task.
 
 See `next.md` for the current target and next actions.
 
