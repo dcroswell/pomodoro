@@ -57,7 +57,7 @@ Serious MVP:
 - Keep the routine engine working before adding AI or voice.
 - Calendar stores reminders, not checklist state.
 - Data should be structured and easy to migrate.
-- The repo is the single source of truth.
+- The repo is the source of truth for code, non-sensitive project documentation and synthetic/non-sensitive examples. Personal records and runtime state remain in their protected owning stores outside Git.
 - Prefer tools and storage that ChatGPT can directly inspect or verify in this project.
 - Keep the routine engine generic and user-driven.
 
@@ -84,7 +84,7 @@ The v0.2 manual trial used repo-tracked CSV files under `data/manual-trial/`:
 - `data/manual-trial/reminders.csv`
 - `data/manual-trial/daily_review.csv`
 
-These files were preferred over Google Sheets because they can be committed, versioned, reviewed, and directly verified through the GitHub connector.
+These files were preferred over Google Sheets because they can be committed, versioned, reviewed, and directly verified through the GitHub connector. This workflow is limited to synthetic/non-sensitive examples; never commit or publish personal CSV/JSON records, private SQLite databases or runtime data to make them inspectable.
 
 ## Code and tests
 
